@@ -2,14 +2,14 @@ Redis Simple Message Queue
 --------------------------
 [![Build Status](https://travis-ci.com/abreksa4/php-rsmq.svg?branch=master)](https://travis-ci.com/abreksa4/php-rsmq)
 [![codecov](https://codecov.io/gh/abreksa4/php-rsmq/branch/master/graph/badge.svg)](https://codecov.io/gh/abreksa4/php-rsmq)
-[![License](https://poser.pugx.org/andrewbreksa/rsmq/license)](//packagist.org/packages/andrewbreksa/rsmq)
+[![License](https://poser.pugx.org/ChickenTom888/rsmq/license)](//packagist.org/packages/ChickenTom888/rsmq)
 [![GitHub issues](https://img.shields.io/github/issues/abreksa4/php-rsmq)](https://github.com/abreksa4/php-rsmq/issues)
-[![Latest Stable Version](https://poser.pugx.org/andrewbreksa/rsmq/v)](//packagist.org/packages/andrewbreksa/rsmq)
-[![Latest Unstable Version](https://poser.pugx.org/andrewbreksa/rsmq/v/unstable)](//packagist.org/packages/andrewbreksa/rsmq)
-[![composer.lock](https://poser.pugx.org/andrewbreksa/rsmq/composerlock)](//packagist.org/packages/andrewbreksa/rsmq)
-[![Total Downloads](https://poser.pugx.org/andrewbreksa/rsmq/downloads)](//packagist.org/packages/andrewbreksa/rsmq)
+[![Latest Stable Version](https://poser.pugx.org/ChickenTom888/rsmq/v)](//packagist.org/packages/ChickenTom888/rsmq)
+[![Latest Unstable Version](https://poser.pugx.org/ChickenTom888/rsmq/v/unstable)](//packagist.org/packages/ChickenTom888/rsmq)
+[![composer.lock](https://poser.pugx.org/ChickenTom888/rsmq/composerlock)](//packagist.org/packages/ChickenTom888/rsmq)
+[![Total Downloads](https://poser.pugx.org/ChickenTom888/rsmq/downloads)](//packagist.org/packages/ChickenTom888/rsmq)
 [![GitHub stars](https://img.shields.io/github/stars/abreksa4/php-rsmq)](https://github.com/abreksa4/php-rsmq/stargazers)
-[![Dependents](https://poser.pugx.org/andrewbreksa/rsmq/dependents)](//packagist.org/packages/andrewbreksa/rsmq)
+[![Dependents](https://poser.pugx.org/ChickenTom888/rsmq/dependents)](//packagist.org/packages/ChickenTom888/rsmq)
 
 A lightweight message queue for PHP that requires no dedicated queue server. Just a Redis server. See
 [smrchy/rsmq](https://github.com/smrchy/rsmq) for more information.
@@ -47,7 +47,7 @@ This is a fork of [eislambey/php-rsmq](https://github.com/eislambey/php-rsmq) wi
 
 # Installation
 
-    composer require andrewbreksa/rsmq
+    composer require chickentom888/php-rsmq
 
 # Methods
 
@@ -66,7 +66,7 @@ Example:
 ```php
 <?php
 use Predis\Client;
-use AndrewBreksa\RSMQ\RSMQClient;
+use ChickenTom888\RSMQ\RSMQClient;
 
 $predis = new Client(
     [
@@ -101,14 +101,14 @@ Returns:
 
 Throws:
 
-* `\AndrewBreksa\RSMQ\Exceptions\QueueAlreadyExistsException`
+* `\ChickenTom888\RSMQ\Exceptions\QueueAlreadyExistsException`
 
 Example:
 
 ```php
 <?php
 /**
- * @var AndrewBreksa\RSMQ\RSMQClientInterface $rsmq
+ * @var ChickenTom888\RSMQ\RSMQClientInterface $rsmq
  */
 
 $rsmq->createQueue('myqueue');
@@ -127,7 +127,7 @@ Example:
 ```php
 <?php
 /**
- * @var AndrewBreksa\RSMQ\RSMQClientInterface $rsmq
+ * @var ChickenTom888\RSMQ\RSMQClientInterface $rsmq
  */
 
 $queues = $rsmq->listQueues();
@@ -147,14 +147,14 @@ Returns:
 
 Throws:
 
-* `\AndrewBreksa\RSMQ\Exceptions\QueueNotFoundException`
+* `\ChickenTom888\RSMQ\Exceptions\QueueNotFoundException`
 
 Example:
 
 ```php
 <?php
 /**
- * @var AndrewBreksa\RSMQ\RSMQClientInterface $rsmq
+ * @var ChickenTom888\RSMQ\RSMQClientInterface $rsmq
  */
 
 $rsmq->deleteQueue('myqueue');
@@ -168,7 +168,7 @@ Parameters:
 
 * `$queue` (string): The Queue name.
 
-Returns a `\AndrewBreksa\RSMQ\QueueAttributes` object with the following properties:
+Returns a `\ChickenTom888\RSMQ\QueueAttributes` object with the following properties:
 
 * `vt` (int): The visibility timeout for the queue in seconds
 * `delay` (int): The delay for new messages in seconds
@@ -186,7 +186,7 @@ Example:
 ```php
 <?php
 /**
- * @var AndrewBreksa\RSMQ\RSMQClientInterface $rsmq
+ * @var ChickenTom888\RSMQ\RSMQClientInterface $rsmq
  */
 
 $attributes =  $rsmq->getQueueAttributes('myqueue');
@@ -216,7 +216,7 @@ Parameters:
 
 Note: At least one attribute (vt, delay, maxsize) must be supplied. Only attributes that are supplied will be modified.
 
-Returns a `\AndrewBreksa\RSMQ\QueueAttributes` object with the following properties:
+Returns a `\ChickenTom888\RSMQ\QueueAttributes` object with the following properties:
 
 * `vt` (int): The visibility timeout for the queue in seconds
 * `delay` (int): The delay for new messages in seconds
@@ -231,16 +231,16 @@ Returns a `\AndrewBreksa\RSMQ\QueueAttributes` object with the following propert
 
 Throws:
 
-* `\AndrewBreksa\RSMQ\QueueAttributes`
-* `\AndrewBreksa\RSMQ\QueueParametersValidationException`
-* `\AndrewBreksa\RSMQ\QueueNotFoundException`
+* `\ChickenTom888\RSMQ\QueueAttributes`
+* `\ChickenTom888\RSMQ\QueueParametersValidationException`
+* `\ChickenTom888\RSMQ\QueueNotFoundException`
 
 Example:
 
 ```php
 <?php
 /**
- * @var AndrewBreksa\RSMQ\RSMQClientInterface $rsmq
+ * @var ChickenTom888\RSMQ\RSMQClientInterface $rsmq
  */
 
 $queue = 'myqueue';
@@ -269,16 +269,16 @@ Returns:
 
 Throws:
 
-* `\AndrewBreksa\RSMQ\Exceptions\MessageToLongException`
-* `\AndrewBreksa\RSMQ\Exceptions\QueueNotFoundException`
-* `\AndrewBreksa\RSMQ\Exceptions\QueueParametersValidationException`
+* `\ChickenTom888\RSMQ\Exceptions\MessageToLongException`
+* `\ChickenTom888\RSMQ\Exceptions\QueueNotFoundException`
+* `\ChickenTom888\RSMQ\Exceptions\QueueParametersValidationException`
 
 Example:
 
 ```php
 <?php
 /**
- * @var AndrewBreksa\RSMQ\RSMQClientInterface $rsmq
+ * @var ChickenTom888\RSMQ\RSMQClientInterface $rsmq
  */
 
 $id = $rsmq->sendMessage('myqueue', 'a message');
@@ -295,7 +295,7 @@ Parameters:
 * `$vt` (int): *optional* *(Default: queue settings)* The length of time, in seconds, that the received message will be
   invisible to others. Allowed values: 0-9999999 (around 115 days)
 
-Returns a `\AndrewBreksa\RSMQ\Message` object with the following properties:
+Returns a `\ChickenTom888\RSMQ\Message` object with the following properties:
 
 * `message` (string): The message's contents.
 * `id` (string): The internal message id.
@@ -307,15 +307,15 @@ Note: Will return an empty array if no message is there
 
 Throws:
 
-* `\AndrewBreksa\RSMQ\Exceptions\QueueNotFoundException`
-* `\AndrewBreksa\RSMQ\Exceptions\QueueParametersValidationException`
+* `\ChickenTom888\RSMQ\Exceptions\QueueNotFoundException`
+* `\ChickenTom888\RSMQ\Exceptions\QueueParametersValidationException`
 
 Example:
 
 ```php
 <?php
 /**
- * @var AndrewBreksa\RSMQ\RSMQClientInterface $rsmq
+ * @var ChickenTom888\RSMQ\RSMQClientInterface $rsmq
  */
 
 $message = $rsmq->receiveMessage('myqueue');
@@ -336,14 +336,14 @@ Returns:
 
 Throws:
 
-* `\AndrewBreksa\RSMQ\Exceptions\QueueParametersValidationException`
+* `\ChickenTom888\RSMQ\Exceptions\QueueParametersValidationException`
 
 Example:
 
 ```php
 <?php
 /**
- * @var AndrewBreksa\RSMQ\RSMQClientInterface $rsmq
+ * @var ChickenTom888\RSMQ\RSMQClientInterface $rsmq
  */
 
 $id = $rsmq->sendMessage('queue', 'a message');
@@ -361,7 +361,7 @@ Parameters:
 
 * `$queue` (string): The Queue name.
 
-Returns a `\AndrewBreksa\RSMQ\Message` object with the following properties:
+Returns a `\ChickenTom888\RSMQ\Message` object with the following properties:
 
 * `message` (string): The message's contents.
 * `id` (string): The internal message id.
@@ -373,15 +373,15 @@ Note: Will return an empty object if no message is there
 
 Throws:
 
-* `\AndrewBreksa\RSMQ\Exceptions\QueueNotFoundException`
-* `\AndrewBreksa\RSMQ\Exceptions\QueueParametersValidationException`
+* `\ChickenTom888\RSMQ\Exceptions\QueueNotFoundException`
+* `\ChickenTom888\RSMQ\Exceptions\QueueParametersValidationException`
 
 Example:
 
 ```php
 <?php
 /**
- * @var AndrewBreksa\RSMQ\RSMQClientInterface $rsmq
+ * @var ChickenTom888\RSMQ\RSMQClientInterface $rsmq
  */
 
 $message = $rsmq->popMessage('myqueue');
@@ -407,15 +407,15 @@ Returns:
 
 Throws:
 
-* `\AndrewBreksa\RSMQ\Exceptions\QueueParametersValidationException`
-* `\AndrewBreksa\RSMQ\Exceptions\QueueNotFoundException`
+* `\ChickenTom888\RSMQ\Exceptions\QueueParametersValidationException`
+* `\ChickenTom888\RSMQ\Exceptions\QueueNotFoundException`
 
 Example:
 
 ```php
 <?php
 /**
- * @var AndrewBreksa\RSMQ\RSMQClientInterface $rsmq
+ * @var ChickenTom888\RSMQ\RSMQClientInterface $rsmq
  */
 
 $queue = 'myqueue';
@@ -427,8 +427,8 @@ if($rsmq->changeMessageVisibility($queue, $id, 60)) {
 
 ## Realtime
 
-When creating an instance of  `AndrewBreksa\RSMQ\RSMQClient`, you can enable the realtime `PUBLISH` for new messages by
-passing `true` for the `$realtime` argument of `\AndrewBreksa\RSMQ\RSMQClient::__construct`. On every new message that
+When creating an instance of  `ChickenTom888\RSMQ\RSMQClient`, you can enable the realtime `PUBLISH` for new messages by
+passing `true` for the `$realtime` argument of `\ChickenTom888\RSMQ\RSMQClient::__construct`. On every new message that
 is sent via `sendMessage`, a Redis `PUBLISH` will be issued to `{rsmq.ns}:rt:{qname}`.
 
 Example for RSMQ with default settings:
@@ -450,13 +450,13 @@ The QueueWorker class provides an easy way to consume RSMQ messages, to use it:
 ```php
 <?php
 /**
- * @var AndrewBreksa\RSMQ\RSMQClientInterface $rsmq
+ * @var ChickenTom888\RSMQ\RSMQClientInterface $rsmq
  */
 
-use AndrewBreksa\RSMQ\ExecutorInterface;
-use AndrewBreksa\RSMQ\Message;
-use AndrewBreksa\RSMQ\QueueWorker;
-use AndrewBreksa\RSMQ\WorkerSleepProvider;
+use ChickenTom888\RSMQ\ExecutorInterface;
+use ChickenTom888\RSMQ\Message;
+use ChickenTom888\RSMQ\QueueWorker;
+use ChickenTom888\RSMQ\WorkerSleepProvider;
 
 $executor = new class() implements ExecutorInterface{
     public function __invoke(Message $message) : bool {

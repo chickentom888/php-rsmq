@@ -47,7 +47,7 @@ This is a fork of [eislambey/php-rsmq](https://github.com/eislambey/php-rsmq) wi
 
 # Installation
 
-    composer require andrewbreksa/rsmq
+    composer require chickentom888/php-rsmq
 
 # Methods
 
@@ -74,7 +74,8 @@ $predis = new Client(
         'port' => 6379
     ]
 );
-$this->rsmq = new RSMQClient($predis);
+$prefix = 'rsmq';
+$this->rsmq = new RSMQClient($predis, $prefix);
 ```
 
 ## Queue
