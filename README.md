@@ -1,15 +1,5 @@
 Redis Simple Message Queue
 --------------------------
-[![Build Status](https://travis-ci.com/abreksa4/php-rsmq.svg?branch=master)](https://travis-ci.com/abreksa4/php-rsmq)
-[![codecov](https://codecov.io/gh/abreksa4/php-rsmq/branch/master/graph/badge.svg)](https://codecov.io/gh/abreksa4/php-rsmq)
-[![License](https://poser.pugx.org/ChickenTom888/rsmq/license)](//packagist.org/packages/ChickenTom888/rsmq)
-[![GitHub issues](https://img.shields.io/github/issues/abreksa4/php-rsmq)](https://github.com/abreksa4/php-rsmq/issues)
-[![Latest Stable Version](https://poser.pugx.org/ChickenTom888/rsmq/v)](//packagist.org/packages/ChickenTom888/rsmq)
-[![Latest Unstable Version](https://poser.pugx.org/ChickenTom888/rsmq/v/unstable)](//packagist.org/packages/ChickenTom888/rsmq)
-[![composer.lock](https://poser.pugx.org/ChickenTom888/rsmq/composerlock)](//packagist.org/packages/ChickenTom888/rsmq)
-[![Total Downloads](https://poser.pugx.org/ChickenTom888/rsmq/downloads)](//packagist.org/packages/ChickenTom888/rsmq)
-[![GitHub stars](https://img.shields.io/github/stars/abreksa4/php-rsmq)](https://github.com/abreksa4/php-rsmq/stargazers)
-[![Dependents](https://poser.pugx.org/ChickenTom888/rsmq/dependents)](//packagist.org/packages/ChickenTom888/rsmq)
 
 A lightweight message queue for PHP that requires no dedicated queue server. Just a Redis server. See
 [smrchy/rsmq](https://github.com/smrchy/rsmq) for more information.
