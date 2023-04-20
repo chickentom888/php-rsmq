@@ -4,6 +4,16 @@
   "type": "library",
   "license": "MIT",
   "version": "2.0.2",
+  "authors": [
+    {
+      "name": "emre can islambey",
+      "email": "eislambey@gmail.com"
+    },
+    {
+      "name": "Andrew Breksa",
+      "email": "andrew@chickentom888.com"
+    }
+  ],
   "require": {
     "php": "^7.4|^8.0",
     "ext-mbstring": "*",
