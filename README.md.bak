@@ -74,8 +74,7 @@ $predis = new Client(
         'port' => 6379
     ]
 );
-$prefix = 'rsmq';
-$this->rsmq = new RSMQClient($predis, $prefix);
+$this->rsmq = new RSMQClient($predis);
 ```
 
 ## Queue
